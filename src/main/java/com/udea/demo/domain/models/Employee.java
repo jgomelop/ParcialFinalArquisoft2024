@@ -2,11 +2,13 @@ package com.udea.demo.domain.models;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
+import jakarta.persistence.ManyToMany;
 import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import java.util.Set;
 
 @AllArgsConstructor
 @NoArgsConstructor
@@ -24,4 +26,7 @@ public class Employee {
 
     @NotNull
     private String lastName;
+
+    @ManyToMany(mappedBy = "employees")
+    Set<Project> projects;
 }
