@@ -1,5 +1,6 @@
 package com.udea.demo.domain.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.ManyToMany;
@@ -28,6 +29,7 @@ public class Employee {
     @NotNull
     private String lastName;
 
+    @JsonIgnore
     @ManyToMany(mappedBy = "employees")
     List<Project> projects = new ArrayList<>();
 }
