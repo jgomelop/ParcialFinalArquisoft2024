@@ -4,4 +4,5 @@ import com.udea.demo.domain.models.Employee;
 
 public interface IEmployeeService {
     Employee createEmployee(Employee employee);
+    Employee assignProjectToEmployee(Long employeeId, Long projectId);
 }
