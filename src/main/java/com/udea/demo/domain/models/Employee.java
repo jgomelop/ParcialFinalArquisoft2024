@@ -18,7 +18,6 @@ import java.util.List;
 @Setter
 @Entity
 public class Employee {
-
     @Id
     @NotNull
     private String document;
