@@ -23,8 +23,8 @@ public class EmployeeService implements IEmployeeService {
     }
 
     @Override
-    public Employee assignProjectToEmployee(Long employeeId, Long projectId) {
-        Optional<Employee> employeeOpt = employeeRepository.findById(employeeId);
+    public Employee assignProjectToEmployee(String employeeDocument, Long projectId) {
+        Optional<Employee> employeeOpt = employeeRepository.findByDocument(employeeDocument);
         Optional<Project> projectOpt = projectRepository.findById(projectId);
 
         if (employeeOpt.isPresent() && projectOpt.isPresent()) {

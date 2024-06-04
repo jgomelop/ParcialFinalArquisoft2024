@@ -30,11 +30,11 @@ public class EmployeeController {
         return ResponseEntity.status(HttpStatus.CREATED).body(savedEmployee);
     }
 
-    @PostMapping(path = "/{employeeId}/projects/{projectId}", produces = "application/vnd.udea.app-v1+json")
+    @PostMapping(path = "/{employeeDocument}/projects/{projectId}", produces = "application/vnd.udea.app-v1+json")
     @Operation(summary = "Assign project to employee")
-    public ResponseEntity<Employee> assignProjectToEmployeeV1(@PathVariable Long employeeId, @PathVariable Long projectId) {
+    public ResponseEntity<Employee> assignProjectToEmployeeV1(@PathVariable String employeeDocument, @PathVariable Long projectId) {
         try {
-            Employee updatedEmployee = employeeService.assignProjectToEmployee(employeeId, projectId);
+            Employee updatedEmployee = employeeService.assignProjectToEmployee(employeeDocument, projectId);
             return ResponseEntity.ok(updatedEmployee);
         } catch (RuntimeException e) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
