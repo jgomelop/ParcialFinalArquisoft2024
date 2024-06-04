@@ -8,7 +8,8 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import java.util.Set;
+import java.util.ArrayList;
+import java.util.List;
 
 @AllArgsConstructor
 @NoArgsConstructor
@@ -28,5 +29,5 @@ public class Employee {
     private String lastName;
 
     @ManyToMany(mappedBy = "employees")
-    Set<Project> projects;
+    List<Project> projects = new ArrayList<>();
 }
