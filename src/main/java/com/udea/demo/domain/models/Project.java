@@ -32,4 +32,5 @@ public class Project {
             joinColumns = @JoinColumn(name = "project_id"),
             inverseJoinColumns = @JoinColumn(name = "employee_document"))
     private List<Employee> employees = new ArrayList<>();
+
 }
