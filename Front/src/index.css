@@ -1,0 +1,23 @@
+.bg-search-proyect {
+  background: black;
+}
+
+.bg-form-proyect {
+  background: #3C7AD8;
+}
+
+.button-style {
+  width: 10rem;
+}
+
+.navbar-brand, .nav-link {
+  color: #fff !important;
+}
+
+.nav-link:hover {
+  color: #3C7AD8 !important;
+}
+
+body {
+  background: #3C7AD8;
+}
